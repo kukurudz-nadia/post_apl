@@ -46,6 +46,8 @@ group :development do
   # gem "spring"
 end
 
-gem 'device'
+gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
+gem 'rest-client', '~> 2.1'
+gem 'active_model_serializers'

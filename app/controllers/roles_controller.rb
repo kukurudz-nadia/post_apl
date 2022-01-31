@@ -4,7 +4,6 @@ class RolesController < ApplicationController
   # GET /roles
   def index
     @roles = Role.all
-
     render json: @roles
   end
 
@@ -16,7 +15,6 @@ class RolesController < ApplicationController
   # POST /roles
   def create
     @role = Role.new(role_params)
-
     if @role.save
       render json: @role, status: :created, location: @role
     else

@@ -3,8 +3,12 @@ class Users::SessionsController < Devise::SessionsController
 
   private
 
-  def respond_with(resource, _opts = {})
-    render json: { message: 'You are logged in.' }, status: :ok
+  def respond_with(resource, _opts)
+    unless current_user.nil?
+    render json: { message: 'You are logged in.' }, status: 200
+    else
+      render json: { message: 'Wrong login or password'}, status: :unprocessable_entity
+    end
   end
 
   def respond_to_on_destroy
@@ -20,4 +24,4 @@ class Users::SessionsController < Devise::SessionsController
   def log_out_failure
     render json: { message: "Hmm nothing happened."}, status: :unauthorized
   end
-end
+  end

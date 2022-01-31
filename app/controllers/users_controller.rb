@@ -4,28 +4,29 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-    render json: @users
+    render json: @users, status: 200
   end
 
-  # GET /users/1
-  def show
-    render json: @user
+  # GET /users/id
+  def show_by_id
+    @user = User.find(params[:id])
+    render json: @user, status: 200, serializer: UserSerializer
   end
 
   # POST /users
-   def create
-    @user = User.new()
-    if @user.save
-      render json: @user, status: :created, location: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
-  end
+  #def create
+  #@user = User.new(user_params)
+  #if @user.save
+  # render json: @user, status: :created, location: @user
+  #else
+  #  render json: @user.errors, status: :unprocessable_entity
+  #  end
+  #end
 
   #PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      render json: @user
+      render json: { message: 'User was updated' }, status: 200
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
+    render json: { message: "User was destroyed" }, status: 200
   end
 
   private
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:login, :password, :nickname, :email, :role_id)
-    end
+    # def user_params
+    #   params.require(:user).permit(:login, :password, :nickname, :email, :role_id)
+    # end
 end
