@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1
-  def show_by_id
+  def show
     @post = Post.find(params[:id])
     render json: @post, status: 200#, serializer: PostSerializer
   end
