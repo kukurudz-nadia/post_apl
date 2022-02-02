@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/id
-  def show_by_id
+  def show
     @user = User.find(params[:id])
     render json: @user, status: 200, serializer: UserSerializer
   end
