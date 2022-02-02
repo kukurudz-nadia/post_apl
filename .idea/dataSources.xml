@@ -28,5 +28,12 @@
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/posts_apl_production</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="posts_app1@localhost" uuid="0102935c-013b-4422-956e-727a3728a557">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/posts_app1</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

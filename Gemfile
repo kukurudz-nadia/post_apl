@@ -7,7 +7,7 @@ ruby "3.0.3"
 gem "rails", "~> 7.0.1"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem 'pg', '~> 1.2', '>= 1.2.3'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -46,3 +46,8 @@ group :development do
   # gem "spring"
 end
 
+gem 'devise'
+gem 'devise-jwt'
+gem 'rack-cors'
+gem 'rest-client', '~> 2.1'
+gem 'active_model_serializers'
