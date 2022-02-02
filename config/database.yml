@@ -86,11 +86,3 @@ production:
   database: posts_apl_production
   username: posts_apl
   password: <%= ENV["POSTS_APL_DATABASE_PASSWORD"] %>
-
-  development:
-    host: localhost
-    adapter: postgresql
-    encoding: unicode
-    database: posts_app
-    pool: 5
-    username: kukurudznadiia
